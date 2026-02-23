@@ -1,8 +1,8 @@
 class Solution(object):
     def fib(self, n):
-        #Base Case
+        #Base Case 
         if n==0 or n==1:
             return n
-
-            #Recursive Case
+        #Recursive Base
         return self.fib(n-1) + self.fib(n-2)
+       
