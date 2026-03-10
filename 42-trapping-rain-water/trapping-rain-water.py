@@ -2,11 +2,9 @@ class Solution(object):
     def trap(self, height):
 
        
-        l = 0
-        r = len(height) - 1
+        l , r = 0, len(height) - 1
         
-        leftMax = 0
-        rightMax = 0
+        leftMax,rightMax= 0,0
         water = 0
 
         while l < r:
