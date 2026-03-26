@@ -1,5 +1,6 @@
 class Solution(object):
     def search(self, nums, target):
+        
         left = 0
         right = len(nums) - 1
         
@@ -14,3 +15,5 @@ class Solution(object):
                 right = mid - 1
         
         return -1
+       
+           
