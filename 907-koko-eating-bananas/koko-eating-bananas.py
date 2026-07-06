@@ -1,18 +1,21 @@
 class Solution(object):
     def minEatingSpeed(self, piles, h):
-        left,right = 1,max(piles)
-        while left < right:
-            mid = (left + right)//2
+        low = 1
+        high = max(piles)
+        while low < high :
+            mid = ( low + high ) // 2
+            hours = 0 
 
-            hours = 0
-            for p in piles:
-                hours+=(p + mid-1)//mid
-            
-            if hours > h:
-                left = mid + 1
+            for bananas in piles:
+                hours+= (bananas + mid-1)//mid
+
+            if hours <= h:
+                high = mid
             else:
-                right = mid
+                low = mid+1
+            
         
-        return left
-        
+        return low
+
+                
        
