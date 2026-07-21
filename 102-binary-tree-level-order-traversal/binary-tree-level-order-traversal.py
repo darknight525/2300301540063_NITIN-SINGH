@@ -10,24 +10,24 @@ class Solution(object):
     def levelOrder(self, root):
         if not root:
             return []
-        
-        result = []
+
         queue = deque([root])
-        
+        ans = []
         while queue:
             level = []
             size = len(queue)
-            
-            for _ in range(size):
+
+            for i in range(size):
                 node = queue.popleft()
                 level.append(node.val)
-                
+
                 if node.left:
                     queue.append(node.left)
                 if node.right:
                     queue.append(node.right)
-            
-            result.append(level)
+
+            ans.append(level)
         
-        return result
-       
+        return ans
+
+        
