@@ -1,18 +1,15 @@
 class Solution:
     def nextGreaterElement(self, nums1, nums2):
-
         stack = []
-        mp = {}
-
+        greater = {}
         for num in nums2:
-
-            while stack and stack[-1] < num:
-                mp[stack.pop()] = num
-
+            while stack and num > stack[-1]:
+                smaller = stack.pop()
+                greater[smaller] = num 
             stack.append(num)
 
-        while stack:
-            mp[stack.pop()] = -1
-
-        return [mp[x] for x in nums1]
-      
+        for i in range(len(nums1)):
+            nums1[i] = greater.get(nums1[i] , -1)
+        
+        return nums1
+     
